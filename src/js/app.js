@@ -88,12 +88,11 @@ var controlCard = function(item) {
     action: {
       up: 'images/on.png',
       down: 'images/off.png',
-      select: 'images/shake.png',
+      // select: 'images/shake.png',
       backgroundColor: 'black'
     },
     body: "Press UP or DOWN to switch your Hook device"
   });
-  var toggleEnabled = true;
   card.show();
   card.on('click', 'up', function() {
     hookRequest(item.urlOn);
@@ -105,18 +104,18 @@ var controlCard = function(item) {
   });
   card.on('click', 'back', function() {
     card.hide();
-    toggleEnabled = false;
+    // toggleEnabled = false;
   });
-  card.on('click', 'select', function() {
-    console.log('Select clicked!');
-    if (toggleEnabled) {
-      card.body("Shake to toggle disabled!");
-      toggleEnabled = false;
-    } else {
-      card.body("Shake to toggle enabled!");
-      toggleEnabled = true;
-    }
-  });
+  // card.on('click', 'select', function() {
+  //   console.log('Select clicked!');
+  //   if (toggleEnabled) {
+  //     card.body("Shake to toggle disabled!");
+  //     toggleEnabled = false;
+  //   } else {
+  //     card.body("Shake to toggle enabled!");
+  //     toggleEnabled = true;
+  //   }
+  // });
   // var toggle = 0;
   // Accel.init();
   // Accel.on('tap', function(e) {
